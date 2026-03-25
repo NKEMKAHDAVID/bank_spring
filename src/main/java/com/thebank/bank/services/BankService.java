@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class Bank{
+public class BankService {
 
     private int nextCustomerId = 1001;
     private int nextAccountNumber = 1;

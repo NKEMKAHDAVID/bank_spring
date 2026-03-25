@@ -4,7 +4,7 @@ import com.thebank.bank.dto.request.AmountRequest;
 import com.thebank.bank.dto.request.TransferRequest;
 import com.thebank.bank.exceptions.InsufficientFundsException;
 import com.thebank.bank.exceptions.InvalidAccountOperationException;
-import com.thebank.bank.services.Bank;
+import com.thebank.bank.services.BankService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/transactions")
 public class TransactionController {
 
-    private final Bank bank;
+    private final BankService bank;
 
-    public TransactionController(Bank bank) {
+    public TransactionController(BankService bank) {
         this.bank = bank;
     }
 

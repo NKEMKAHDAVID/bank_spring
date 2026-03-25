@@ -3,7 +3,7 @@ package com.thebank.bank.controllers;
 import com.thebank.bank.dto.request.AmountRequest;
 import com.thebank.bank.exceptions.HoldNotFoundException;
 import com.thebank.bank.exceptions.InvalidAccountOperationException;
-import com.thebank.bank.services.Bank;
+import com.thebank.bank.services.BankService;
 import com.thebank.bank.customer.Customer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +14,9 @@ import java.util.List;
 @RequestMapping("/api/other")
 public class OtherController {
 
-    private final Bank bank;
+    private final BankService bank;
 
-    public OtherController(Bank bank) {
+    public OtherController(BankService bank) {
         this.bank = bank;
     }
 

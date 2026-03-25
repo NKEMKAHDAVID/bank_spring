@@ -2,7 +2,7 @@ package com.thebank.bank.controllers;
 
 import com.thebank.bank.dto.request.OpenAccountRequest;
 import com.thebank.bank.exceptions.InvalidAccountOperationException;
-import com.thebank.bank.services.Bank;
+import com.thebank.bank.services.BankService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.thebank.bank.model.Account;
@@ -10,11 +10,12 @@ import com.thebank.bank.model.Account;
 @RequestMapping("/api/account")
 public class AccountController {
 
-    private final Bank bank;
+    private final BankService bank;
 
-    public AccountController(Bank bank) {
+    public AccountController(BankService bank) {
         this.bank = bank;
     }
+
 
     @PostMapping("/openAccount")
     public ResponseEntity<?> openAccount(@RequestBody OpenAccountRequest request) {

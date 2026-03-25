@@ -2,7 +2,7 @@ package com.thebank.bank.controllers;
 
 import com.thebank.bank.dto.request.AddCustomerRequest;
 import com.thebank.bank.exceptions.InvalidAccountOperationException;
-import com.thebank.bank.services.Bank;
+import com.thebank.bank.services.BankService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.thebank.bank.customer.Customer;
@@ -11,9 +11,9 @@ import java.util.List;
 @RequestMapping("/api/customer")
 public class CustomerController {
 
-    private final Bank bank;
+    private final BankService bank;
 
-    public CustomerController(Bank bank) {
+    public CustomerController(BankService bank) {
         this.bank = bank;
     }
 
